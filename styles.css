@@ -82,7 +82,7 @@ body {
 
 .extension-list-header > .state-buttons {
     display: flex;
-    padding: 0 30px;
+    padding: 0 21px;
     justify-content: space-between;
     margin-top: 16px;
 }
@@ -113,12 +113,24 @@ body {
 .extension-description {
     display: flex;
     flex-direction: row;
+    margin-bottom: 16px;
 }
 
 .extension-description > img {
     align-self: start;
+    width: 46px;
 }
 
 .extension-description > .extension-text {
-    padding-left:  16px;
+    padding-left:  13px;
+}
+
+.extension-text > h3 {
+    font-size: 15px;
+    color: #fff;
+}
+
+.extension-text > p {
+      font-size: 12px;
+    color: hsl(0, 0%, 78%);
 }
