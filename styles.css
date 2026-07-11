@@ -230,6 +230,15 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    color: hsl(3, 71%, 56%);
+}
+
 /* Tablet view */
 @media only screen and (min-width:640px) {
 
