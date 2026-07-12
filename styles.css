@@ -56,6 +56,15 @@ body {
     justify-self: end;
 }
 
+.header  > input:focus {
+    border: 2px solid hsl(227, 75%, 14%); 
+     -webkit-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    background-color: hsl(225, 23%, 24%);
+
+}
+
 #text-path {
     fill: #fff;
 }
@@ -74,6 +83,7 @@ body {
     display: grid;
     grid-template-rows: auto auto;
     margin-bottom: 18px;
+    height:95px;
 }
 
 .extension-list-header > h1 {
@@ -92,32 +102,57 @@ body {
     max-width: 340px;
 }
 
-.state-buttons  > input {
+.state-buttons  > div {
+    width: 110px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.state-buttons  > div input {
     font-size: 16px;
     background-color: hsl(225, 23%, 24%);
     color: #fff;
     border: 0.7px solid hsl(226, 11%, 37%);
-    padding: 7px 15px;
-    margin: 0 8px;
+    /* padding: 7px 15px; */
+    width: 92px;
+    height: 39px;
+    /* margin: 0 8px; */
     border-radius: 36px;
 }
 
-.state-buttons  > input:hover {
+.state-buttons  > div input:hover {
     background-color: hsl(3, 71%, 56%);
     color: hsl(225, 23%, 24%);
     font-weight: bold;
     cursor: pointer;
 }
 
+.state-buttons  > div input:focus {
+    border: 2px solid hsl(227, 75%, 14%); 
+     -webkit-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    background-color: hsl(225, 23%, 24%);
+
+}
+
+.state-buttons  > div input:focus:hover {
+  color: #fff;
+}
 .extensions {
     background-color: hsl(225, 23%, 24%);
       border: 0.7px solid hsl(226, 11%, 37%);
       border-radius: 17px;
-      padding: 16px;
+      padding-top: 16px;
+       padding-left: 16px;
+        padding-right: 16px;
+         padding-bottom:  0px;
        max-width: 340px;
        margin: 0 auto;
        display: grid;
-     grid-template-rows: auto auto;
+     grid-template-rows: auto 50px;
 }
 
 .extension-description {
@@ -151,9 +186,14 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-content: end;
+    height: 50px;
 }
-
-.extension-buttons  > .remove-button {
+.extension-buttons  > div {
+    height: 50px;
+  display: flex;
+  align-items: center;
+}
+.extension-buttons  > div .remove-button {
     font-size: 12px;
     background-color: hsl(225, 23%, 24%);
     color: #fff;
@@ -161,11 +201,24 @@ body {
     padding: 4px 10px;
     border-radius: 36px;
 }
-.extension-buttons  > .remove-button:hover {
+.extension-buttons  > div .remove-button:hover {
         background-color: hsl(3, 71%, 56%);
     color: hsl(225, 23%, 24%);
     font-weight: bold;
     cursor: pointer;
+}
+
+.extension-buttons  > div input:focus {
+    border: 2px solid hsl(227, 75%, 14%); 
+     -webkit-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    background-color: hsl(225, 23%, 24%);
+
+}
+
+.extension-buttons  > div .remove-button:focus:hover {
+  color: #fff;
 }
 
 /*  Toggle */
@@ -200,11 +253,11 @@ body {
   content: "";
   height: 15px;
   width: 15px;
-  left: 3px;
-  bottom: 1.7px;
+  top: 50%; 
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+    transform:translateY(-50%);
 }
 
 input:checked + .slider {
@@ -212,13 +265,21 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px hsl(3, 71%, 56%);
+    border: 2px solid hsl(227, 75%, 14%); 
+     -webkit-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
+    box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
 }
 
+/* input:focus + .slider:before {
+      left: 3px;
+  bottom: 0px;
+} */
+
 input:checked + .slider:before {
-  -webkit-transform: translateX(14px);
-  -ms-transform: translateX(14px);
-  transform: translateX(14px);
+  -webkit-transform: translate(17px, -50%);
+  -ms-transform: translate(17px, -50%);
+  transform: translate(17px, -50%);
 }
 
 /* Rounded sliders */
@@ -255,7 +316,7 @@ footer a:hover {
 .extension-list-header {
     grid-column: 1 / span 2;
     grid-template-columns: auto auto;
-   
+   height:45px;
 }
 
 
@@ -293,7 +354,7 @@ font-size: 25px;
 .extension-list-header {
     grid-column: 1 / span 3;
     grid-template-columns: auto auto;
-   
+   height:45px;
 }
 
 .extension-description {
