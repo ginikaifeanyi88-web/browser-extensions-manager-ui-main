@@ -33,7 +33,7 @@ body {
 .header {
     max-width: 340px;
     background-color: hsl(225, 23%, 24%);
-    /* width: 330px; */
+     box-shadow: 0px 3px 5px 0px hsl(224, 24%, 22%);
     width: 90vw;
     margin: auto;
     margin-top: 18px;
@@ -56,14 +56,14 @@ body {
     justify-self: end;
 }
 
-.header  > input:focus {
+/* .header  > input:focus {
     border: 2px solid hsl(227, 75%, 14%); 
      -webkit-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
     -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
     box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
     background-color: hsl(225, 23%, 24%);
 
-}
+} */
 
 #text-path {
     fill: #fff;
@@ -270,11 +270,6 @@ input:focus + .slider {
     -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
     box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
 }
-
-/* input:focus + .slider:before {
-      left: 3px;
-  bottom: 0px;
-} */
 
 input:checked + .slider:before {
   -webkit-transform: translate(17px, -50%);
