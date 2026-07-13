@@ -10,7 +10,7 @@ const extensionNames = document.querySelectorAll(".extension-text > h3");
 const extensionDescriptions = document.querySelectorAll(".extension-text > p");
 const removeButtons = document.querySelectorAll(".extension-buttons > div .remove-button");
 const toggleBackgrounds = document.querySelectorAll(".slider");
-const toggleInputs = document.querySelector(".switch input");
+const toggleInputs = document.querySelectorAll(".switch input");
 
 /*  Main function for changing theme colors*/
 const changeTheme = function () {
@@ -167,7 +167,21 @@ removeButton.addEventListener("mouseleave", ()=>{
 
  /* Function to change state of extension to active or inactive */
 toggleInputs.forEach(toggleInput => {
-    toggleInput.addEventListener("click",() =>{
-
-    })
+    toggleInput.addEventListener("change", ()=>{
+      let toggleID = toggleInput.getAttribute("id").split("-checkbox");
+            let extensionID = toggleID[0];
+        if (toggleInput.checked) {
+            extensionClass = document.getElementById(extensionID).getAttribute("class");
+      
+                extensionClassInner = document.getElementById(extensionID).getAttribute("class");
+                extensionClassInner = "extensions active";
+                document.getElementById(extensionID).setAttribute("class", extensionClassInner);
+        } else  {
+            extensionClassInner = document.getElementById(extensionID).getAttribute("class");
+            extensionClassInner -= "active";
+                extensionClassInner = "extensions inactive";
+                document.getElementById(extensionID).setAttribute("class", extensionClassInner);
+        }
+    });
 });
+
