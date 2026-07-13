@@ -34,7 +34,7 @@ body {
     max-width: 340px;
     background-color: hsl(225, 23%, 24%);
      box-shadow: 0px 3px 5px 0px hsl(224, 24%, 22%);
-    width: 90vw;
+
     margin: auto;
     margin-top: 18px;
     display: grid;
@@ -122,12 +122,10 @@ body {
     border-radius: 36px;
 }
 
-.state-buttons  > div input:hover {
-    background-color: hsl(3, 71%, 56%);
-    color: hsl(225, 23%, 24%);
+ .state-buttons  > div input:hover {
     font-weight: bold;
     cursor: pointer;
-}
+} 
 
 .state-buttons  > div input:focus {
     border: 2px solid hsl(227, 75%, 14%); 
@@ -144,6 +142,7 @@ body {
 .extensions {
     background-color: hsl(225, 23%, 24%);
       border: 0.7px solid hsl(226, 11%, 37%);
+      box-shadow: 0px 3px 5px 0px hsl(224, 24%, 22%);
       border-radius: 17px;
       padding-top: 16px;
        padding-left: 16px;
@@ -201,12 +200,11 @@ body {
     padding: 4px 10px;
     border-radius: 36px;
 }
-.extension-buttons  > div .remove-button:hover {
-        background-color: hsl(3, 71%, 56%);
-    color: hsl(225, 23%, 24%);
+ .extension-buttons  > div .remove-button:hover {
+   
     font-weight: bold;
     cursor: pointer;
-}
+} 
 
 .extension-buttons  > div input:focus {
     border: 2px solid hsl(227, 75%, 14%); 
@@ -243,7 +241,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: hsl(226, 11%, 37%);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -265,7 +263,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    border: 2px solid hsl(227, 75%, 14%); 
+    border: 2px solid transparent; 
      -webkit-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
     -moz-box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
     box-shadow: 0px 0px 0px 2px hsl(3, 71%, 56%);
