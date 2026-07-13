@@ -14,7 +14,7 @@
   --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
   --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
 }
-
+ 
 * {
     margin: 0;
     padding: 0;
