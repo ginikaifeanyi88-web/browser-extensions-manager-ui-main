@@ -1,3 +1,4 @@
+/* Variable declarations */
 let colorTheme = document.querySelector("#color-theme");
 const body= document.querySelector("body");
 const header = document.querySelector(".header");
@@ -6,10 +7,12 @@ const gridTitle = document.querySelector(".extension-list-header > h1");
 const stateButtons = document.querySelectorAll(".state-buttons > div input");
 const extensions = document.querySelectorAll(".extensions");
 const extensionNames = document.querySelectorAll(".extension-text > h3");
+const extensionDescriptions = document.querySelectorAll(".extension-text > p");
 const removeButtons = document.querySelectorAll(".extension-buttons > div .remove-button");
-const toggleBackground = document.querySelectorAll(".switch > input");
+const toggleBackgrounds = document.querySelectorAll(".slider");
+const toggleInputs = document.querySelector(".switch input");
 
-
+/*  Main function for changing theme colors*/
 const changeTheme = function () {
     if (colorTheme.getAttribute("class") == "dark-state") {
         colorTheme.setAttribute("class", "light-state");
@@ -19,7 +22,37 @@ const changeTheme = function () {
           header.style.backgroundColor = "#fff"
           header.style.boxShadow = "0px 3px 5px 0px hsl(217, 23%, 74%)"
           logoColor.style.fill = "hsl(225, 23%, 24%)";
+          gridTitle.style.color = "hsl(225, 23%, 24%)";
+          stateButtons.forEach(stateButton => {
+    stateButton.style.color = "hsl(225, 23%, 24%)";
+    stateButton.style.backgroundColor = "#fff";
+    stateButton.style.border = "0.7px solid hsl(0, 0%, 78%)";
+});
 
+   extensions.forEach(extension => {
+    extension.style.backgroundColor = "#fff";
+    extension.style.border = "0.7px solid hsl(0, 2%, 82%)";
+    extension.style.boxShadow = "0px 3px 5px 0px hsl(217, 39%, 87%)";
+});
+
+   extensionNames.forEach(extensionName => {
+    extensionName.style.color = "hsl(225, 23%, 24%)";
+});
+
+   extensionDescriptions.forEach(extensionDescription => {
+    extensionDescription.style.color = "hsl(226, 11%, 37%)";
+});
+
+ removeButtons.forEach(removeButton => {
+    removeButton.style.color = "hsl(225, 23%, 24%)";
+    removeButton.style.backgroundColor = "#fff";
+    removeButton.style.border = "0.7px solid hsl(0, 2%, 82%)";
+
+});
+
+ toggleBackgrounds.forEach(toggleBackground => {
+toggleBackground.style.backgroundColor = "#ccc";
+});
     } else {
         colorTheme.setAttribute("class", "dark-state");
          colorTheme.setAttribute("src", "/assets/images/icon-sun.svg");
@@ -28,13 +61,39 @@ const changeTheme = function () {
         header.style.backgroundColor = "";
           header.style.boxShadow = "";
         logoColor.style.fill = "";
+        gridTitle.style.color = "";
+        stateButtons.forEach(stateButton => {
+    stateButton.style.color = "#fff";
+    stateButton.style.backgroundColor = "hsl(225, 23%, 24%)";
+    stateButton.style.border = "";
+});
+
+  extensions.forEach(extension => {
+    extension.style.backgroundColor = "";
+    extension.style.border = "";
+    extension.style.boxShadow = "";
+});
+
+   extensionNames.forEach(extensionName => {
+    extensionName.style.color = "";
+});
+
+ extensionDescriptions.forEach(extensionDescription => {
+    extensionDescription.style.color = "";
+});
+ removeButtons.forEach(removeButton => {
+    removeButton.style.color = "";
+    removeButton.style.backgroundColor = "";
+    removeButton.style.border = "";
+});
+ toggleBackgrounds.forEach(toggleBackground => {
+toggleBackground.style.backgroundColor = "";
+});
     }
 };
 
-// stateButtons.forEach(stateButton => {
-//     stateButton.style.color = "red";
-// });
 
+/* Function for color theme button focus state  */
 document.getElementById("color-theme").addEventListener("click", () => {
        if (colorTheme.getAttribute("class") == "dark-state") { 
         colorTheme.style.border = "2px solid hsl(227, 75%, 14%)";
@@ -49,3 +108,66 @@ function blurFunction() {
  colorTheme.style.border = "";
  colorTheme.style.boxShadow=   "";
 }
+
+/* Functions for hover state of state buttons*/
+ stateButtons.forEach(stateButton => {
+stateButton.addEventListener("mouseenter", ()=>{
+    if (colorTheme.getAttribute("class") == "light-state") {
+    stateButton.style.color = "#fff";
+    stateButton.style.backgroundColor = "hsl(3, 71%, 56%)"
+    } else {
+        stateButton.style.color = "hsl(227, 75%, 14%)";
+    stateButton.style.backgroundColor = "hsl(3, 71%, 56%)"
+    }
+});
+ });
+
+  stateButtons.forEach(stateButton => {
+stateButton.addEventListener("mouseleave", ()=>{
+    if (colorTheme.getAttribute("class") == "dark-state") {
+    stateButton.style.color = "";
+    stateButton.style.backgroundColor = "";
+       stateButton.style.border = "";
+    } else {
+         stateButton.style.color = "hsl(225, 23%, 24%)";
+    stateButton.style.backgroundColor = "#fff";
+    stateButton.style.border = "0.7px solid hsl(0, 0%, 78%)";
+    }
+});
+ });
+
+
+ /* Function for hover state of removeButtons*/
+removeButtons.forEach(removeButton => {
+removeButton.addEventListener("mouseenter", ()=>{
+    if (colorTheme.getAttribute("class") == "light-state") {
+    removeButton.style.color = "#fff";
+   removeButton.style.backgroundColor = "hsl(3, 71%, 56%)"
+    } else {
+        removeButton.style.color = "hsl(227, 75%, 14%)";
+    removeButton.style.backgroundColor = "hsl(3, 71%, 56%)"
+    }
+});
+ });
+
+removeButtons.forEach(removeButton => {
+removeButton.addEventListener("mouseleave", ()=>{
+    if (colorTheme.getAttribute("class") == "dark-state") {
+ removeButton.style.color = "";
+   removeButton.style.backgroundColor = "";
+       removeButton.style.border = "";
+    } else {
+         removeButton.style.color = "hsl(225, 23%, 24%)";
+    removeButton.style.backgroundColor = "#fff";
+   removeButton.style.border = "0.7px solid hsl(0, 0%, 78%)";
+    }
+});
+ });
+
+
+ /* Function to change state of extension to active or inactive */
+toggleInputs.forEach(toggleInput => {
+    toggleInput.addEventListener("click",() =>{
+
+    })
+});
