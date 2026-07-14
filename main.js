@@ -50,8 +50,17 @@ const changeTheme = function () {
 
 });
 
- toggleBackgrounds.forEach(toggleBackground => {
-toggleBackground.style.backgroundColor = "#ccc";
+toggleInputs.forEach(toggleInput => {
+      let checkboxColor = toggleInput.nextElementSibling;
+        if (toggleInput.checked) {
+            checkboxColor.style.backgroundColor = "hsl(3, 71%, 56%)";
+         } else  {
+            if  (colorTheme.getAttribute("class") == "dark-state") {
+            checkboxColor.style.backgroundColor = "";
+            } else {
+                checkboxColor.style.backgroundColor = "#ccc";
+            }
+        }
 });
     } else {
         colorTheme.setAttribute("class", "dark-state");
@@ -185,3 +194,47 @@ toggleInputs.forEach(toggleInput => {
     });
 });
 
+ /* Function to change color of toggle when clicked */
+toggleInputs.forEach(toggleInput => {
+    toggleInput.addEventListener("change", ()=>{
+      let checkboxColor = toggleInput.nextElementSibling;
+        if (toggleInput.checked) {
+            checkboxColor.style.backgroundColor = "hsl(3, 71%, 56%)";
+         } else  {
+            if  (colorTheme.getAttribute("class") == "dark-state") {
+            checkboxColor.style.backgroundColor = "";
+            } else {
+                checkboxColor.style.backgroundColor = "#ccc";
+            }
+        }
+    });
+});
+
+/* Function for active button page  */
+document.getElementById("activeButton").addEventListener("click", () => {
+    extensions.forEach(extension => {
+        if (extension.getAttribute("class").includes("inactive")) {
+            extension.style.display= "none";
+        } else {
+              extension.style.display = "";
+        }
+    });
+});
+
+/* Function for inactive button page  */
+document.getElementById("inactiveButton").addEventListener("click", () => {
+    extensions.forEach(extension => {
+        if (!(extension.getAttribute("class").includes("inactive"))) {
+            extension.style.display = "none";
+        } else {
+              extension.style.display = "";
+        }
+    });
+});
+
+/* Function for all button page  */
+document.getElementById("allButton").addEventListener("click", () => {
+    extensions.forEach(extension => {
+              extension.style.display = "";
+    });
+});
