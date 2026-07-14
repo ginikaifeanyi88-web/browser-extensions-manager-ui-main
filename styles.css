@@ -14,6 +14,12 @@
   --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
   --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
 }
+
+/* .main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} */
  
 * {
     margin: 0;
@@ -23,9 +29,14 @@
     color: hsl(187, 24%, 22%);
 }
 
+
+
 body {
     background-color: hsl(227, 75%, 14%);
     color: hsl(0, 0%, 78%);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
@@ -282,6 +293,10 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+footer {
+    margin-top: auto;
 }
 
 footer a {
