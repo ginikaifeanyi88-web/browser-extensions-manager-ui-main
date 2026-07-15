@@ -301,7 +301,7 @@ input:checked + .slider:before {
 }
 .messageContainer > div {
        margin: 0 auto;
-       color: #fff;
+       
     font-size: 19px;
 }
 
