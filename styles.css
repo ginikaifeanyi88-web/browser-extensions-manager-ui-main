@@ -294,6 +294,16 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+.messageContainer {
+    max-width: 340px;
+    margin: 0 auto;
+
+}
+.messageContainer > div {
+       margin: 0 auto;
+       color: #fff;
+    font-size: 19px;
+}
 
 footer {
     margin-top: auto;
@@ -313,6 +323,12 @@ footer a:hover {
 
     .header {
         max-width: 690px;
+
+}
+
+    .messageContainer {
+ 
+    margin: 0px 0px
 
 }
 
@@ -353,6 +369,12 @@ font-size: 25px;
 
 /* Desktop view */
 @media only screen and (min-width:1200px) { 
+    .messageContainer {
+ 
+    margin: 0px 0px
+
+}
+
 
 .main-grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -364,6 +386,7 @@ font-size: 25px;
     grid-template-columns: auto auto;
    height:45px;
 }
+
 
 .extension-description {
 
