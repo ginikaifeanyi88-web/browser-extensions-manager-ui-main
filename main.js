@@ -11,6 +11,8 @@ const extensionDescriptions = document.querySelectorAll(".extension-text > p");
 const removeButtons = document.querySelectorAll(".extension-buttons > div .remove-button");
 const toggleBackgrounds = document.querySelectorAll(".slider");
 const toggleInputs = document.querySelectorAll(".switch input");
+const messageContainer = document.querySelector(".messageContainer");
+let activeButtonClicked = false;
 
 /*  Main function for changing theme colors*/
 const changeTheme = function () {
@@ -210,30 +212,58 @@ toggleInputs.forEach(toggleInput => {
     });
 });
 
+
 /* Function for active button page  */
 document.getElementById("activeButton").addEventListener("click", () => {
+     messageContainer.innerHTML = "";
+    let i = 0;
     extensions.forEach(extension => {
         if (extension.getAttribute("class").includes("inactive")) {
             extension.style.display= "none";
         } else {
               extension.style.display = "";
+              i++;
         }
     });
+    if (i==0 && (messageContainer.childNodes.length == 0)) {
+        let html = "<div class='active_message'>You have no active extensions</div>";
+        messageContainer.innerHTML += html;
+    }
+    else if (i==0 && !(messageContainer.childNodes.length == 0)) {
+        messageContainer.innerHTML = "";
+        let html = "<div class='active_message'>You have no active extensions</div>";
+        messageContainer.innerHTML += html;
+    }
 });
+
+
 
 /* Function for inactive button page  */
 document.getElementById("inactiveButton").addEventListener("click", () => {
+     messageContainer.innerHTML = "";
+       let i = 0;
     extensions.forEach(extension => {
         if (!(extension.getAttribute("class").includes("inactive"))) {
             extension.style.display = "none";
         } else {
               extension.style.display = "";
+              i++;
         }
     });
+        if (i==0 && (messageContainer.childNodes.length == 0)) {
+        let html = "<div class='active_message'>You have no inactive extensions</div>";
+        messageContainer.innerHTML += html;
+    }
+    else if (i==0 && !(messageContainer.childNodes.length == 0)) {
+        messageContainer.innerHTML = "";
+        let html = "<div class='active_message'>You have no inactive extensions</div>";
+        messageContainer.innerHTML += html;
+    }
 });
 
 /* Function for all button page  */
 document.getElementById("allButton").addEventListener("click", () => {
+     messageContainer.innerHTML = "";
     extensions.forEach(extension => {
               extension.style.display = "";
     });
