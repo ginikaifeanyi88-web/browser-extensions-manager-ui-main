@@ -21,6 +21,9 @@ const changeTheme = function () {
         colorTheme.setAttribute("src", "/assets/images/icon-moon.svg");
         colorTheme.style.backgroundColor = "hsl(0, 0%, 93%)";
            body.style.backgroundColor = "hsl(219, 67%, 94%)";
+             if (document.querySelector(".active_message") !=null) {
+          document.querySelector(".active_message").style.color = "";
+    };
           header.style.backgroundColor = "#fff"
           header.style.boxShadow = "0px 3px 5px 0px hsl(217, 23%, 74%)"
           logoColor.style.fill = "hsl(225, 23%, 24%)";
@@ -68,6 +71,9 @@ toggleInputs.forEach(toggleInput => {
         colorTheme.setAttribute("class", "dark-state");
          colorTheme.setAttribute("src", "/assets/images/icon-sun.svg");
           colorTheme.style.backgroundColor = "";
+          if (document.querySelector(".active_message") !=null) {
+          document.querySelector(".active_message").style.color = "#fff";
+    };
         body.style.backgroundColor = "";
         header.style.backgroundColor = "";
           header.style.boxShadow = "";
@@ -228,11 +234,21 @@ document.getElementById("activeButton").addEventListener("click", () => {
     if (i==0 && (messageContainer.childNodes.length == 0)) {
         let html = "<div class='active_message'>You have no active extensions</div>";
         messageContainer.innerHTML += html;
+        if (colorTheme.getAttribute("class") == "light-state") {
+            document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
     }
     else if (i==0 && !(messageContainer.childNodes.length == 0)) {
         messageContainer.innerHTML = "";
         let html = "<div class='active_message'>You have no active extensions</div>";
         messageContainer.innerHTML += html;
+         if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
     }
 });
 
@@ -253,11 +269,21 @@ document.getElementById("inactiveButton").addEventListener("click", () => {
         if (i==0 && (messageContainer.childNodes.length == 0)) {
         let html = "<div class='active_message'>You have no inactive extensions</div>";
         messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
     }
     else if (i==0 && !(messageContainer.childNodes.length == 0)) {
         messageContainer.innerHTML = "";
         let html = "<div class='active_message'>You have no inactive extensions</div>";
         messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
     }
 });
 
@@ -268,3 +294,7 @@ document.getElementById("allButton").addEventListener("click", () => {
               extension.style.display = "";
     });
 });
+
+/* Function to remove extensions */
+
+
