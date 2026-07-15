@@ -250,6 +250,16 @@ document.getElementById("activeButton").addEventListener("click", () => {
             document.querySelector(".active_message").style.color = "#fff";
         }
     }
+      else if ((document.getElementsByClassName("extensions").length == 0)) {
+        messageContainer.innerHTML = "";
+         let html = "<div class='active_message'>You have no installed extensions</div>";
+        messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
+    }
 });
 
 
@@ -285,6 +295,16 @@ document.getElementById("inactiveButton").addEventListener("click", () => {
             document.querySelector(".active_message").style.color = "#fff";
         }
     }
+    else if ((document.getElementsByClassName("extensions").length == 0)) {
+        messageContainer.innerHTML = "";
+         let html = "<div class='active_message'>You have no installed extensions</div>";
+        messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
+    }
 });
 
 /* Function for all button page  */
@@ -293,8 +313,36 @@ document.getElementById("allButton").addEventListener("click", () => {
     extensions.forEach(extension => {
               extension.style.display = "";
     });
+      if ((document.getElementsByClassName("extensions").length == 0)) {
+        messageContainer.innerHTML = "";
+         let html = "<div class='active_message'>You have no installed extensions</div>";
+        messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
+    }
 });
 
 /* Function to remove extensions */
 
+removeButtons.forEach(removeButton => {
+    removeButton.addEventListener("click", ()=>{
+        let removeButtonName = removeButton.getAttribute("id");
+        let extensionProperty = removeButtonName.split("remove-");
+        let extensionFullProperty = "extension-" + extensionProperty[1];
+        document.getElementById(extensionFullProperty).remove();
+            if (document.getElementsByClassName("extensions").length == 0) {
+        messageContainer.innerHTML = "";
+         let html = "<div class='active_message'>You have no installed extensions</div>";
+        messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
+    }
+    });
+});
 
