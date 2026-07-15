@@ -17,8 +17,6 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -34,20 +32,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://browser-extensions-manager-ui-main-theta.vercel.app/)
 
 ## My process
 
@@ -58,41 +47,37 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
+  
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was a challenge, probably the most demanding project so far. Doing this taught me a LOT about JavaScript. I feel more comfortable chaining functions together to add interactivity to websites now. Took a bit out of mee but I am determined to keep improving my skills.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+This little function below is where it all clicked together for me. It's all about problem solving! I was able to change the state of each extension to "active" or "inactive" by updating their class attributes using the toggle in each of them. 
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+toggleInputs.forEach(toggleInput => {
+    toggleInput.addEventListener("change", ()=>{
+      let toggleID = toggleInput.getAttribute("id").split("-checkbox");
+            let extensionID = toggleID[0];
+        if (toggleInput.checked) {
+            extensionClass = document.getElementById(extensionID).getAttribute("class");
+      
+                extensionClassInner = document.getElementById(extensionID).getAttribute("class");
+                extensionClassInner = "extensions active";
+                document.getElementById(extensionID).setAttribute("class", extensionClassInner);
+        } else  {
+            extensionClassInner = document.getElementById(extensionID).getAttribute("class");
+            extensionClassInner -= "active";
+                extensionClassInner = "extensions inactive";
+                document.getElementById(extensionID).setAttribute("class", extensionClassInner);
+        }
+    });
+});
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+There are some obvious issues. For one when removing each extension, there are inconsistencies in what message is displayed on the page depending on the button you click (if a message at all). I also want to add a prompt message that asks the user "if they wish to remove this extension" and if they click "yes", the extension is removed and a toast message is displayed. Hopefully I am able to make these fixes and updates in the coming days.
 
 ### Useful resources
 
