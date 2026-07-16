@@ -231,21 +231,11 @@ document.getElementById("activeButton").addEventListener("click", () => {
               i++;
         }
     });
-    if (i==0 && (messageContainer.childNodes.length == 0)) {
+    if ((document.getElementsByClassName("active").length == 0) && !(document.getElementsByClassName("extensions").length == 0)) {
         let html = "<div class='active_message'>You have no active extensions</div>";
         messageContainer.innerHTML += html;
         if (colorTheme.getAttribute("class") == "light-state") {
             document.querySelector(".active_message").style.color = "";
-        } else {
-            document.querySelector(".active_message").style.color = "#fff";
-        }
-    }
-    else if (i==0 && !(messageContainer.childNodes.length == 0)) {
-        messageContainer.innerHTML = "";
-        let html = "<div class='active_message'>You have no active extensions</div>";
-        messageContainer.innerHTML += html;
-         if (colorTheme.getAttribute("class") == "light-state") {
-           document.querySelector(".active_message").style.color = "";
         } else {
             document.querySelector(".active_message").style.color = "#fff";
         }
@@ -276,17 +266,7 @@ document.getElementById("inactiveButton").addEventListener("click", () => {
               i++;
         }
     });
-        if (i==0 && (messageContainer.childNodes.length == 0)) {
-        let html = "<div class='active_message'>You have no inactive extensions</div>";
-        messageContainer.innerHTML += html;
-          if (colorTheme.getAttribute("class") == "light-state") {
-           document.querySelector(".active_message").style.color = "";
-        } else {
-            document.querySelector(".active_message").style.color = "#fff";
-        }
-    }
-    else if (i==0 && !(messageContainer.childNodes.length == 0)) {
-        messageContainer.innerHTML = "";
+        if ((document.getElementsByClassName("inactive").length == 0) && !(document.getElementsByClassName("extensions").length == 0)) {
         let html = "<div class='active_message'>You have no inactive extensions</div>";
         messageContainer.innerHTML += html;
           if (colorTheme.getAttribute("class") == "light-state") {
