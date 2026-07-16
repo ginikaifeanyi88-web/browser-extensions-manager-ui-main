@@ -12,7 +12,6 @@ const removeButtons = document.querySelectorAll(".extension-buttons > div .remov
 const toggleBackgrounds = document.querySelectorAll(".slider");
 const toggleInputs = document.querySelectorAll(".switch input");
 const messageContainer = document.querySelector(".messageContainer");
-let activeButtonClicked = false;
 
 /*  Main function for changing theme colors*/
 const changeTheme = function () {
@@ -222,13 +221,11 @@ toggleInputs.forEach(toggleInput => {
 /* Function for active button page  */
 document.getElementById("activeButton").addEventListener("click", () => {
      messageContainer.innerHTML = "";
-    let i = 0;
     extensions.forEach(extension => {
         if (extension.getAttribute("class").includes("inactive")) {
             extension.style.display= "none";
         } else {
               extension.style.display = "";
-              i++;
         }
     });
     if ((document.getElementsByClassName("active").length == 0) && !(document.getElementsByClassName("extensions").length == 0)) {
@@ -257,13 +254,11 @@ document.getElementById("activeButton").addEventListener("click", () => {
 /* Function for inactive button page  */
 document.getElementById("inactiveButton").addEventListener("click", () => {
      messageContainer.innerHTML = "";
-       let i = 0;
     extensions.forEach(extension => {
         if (!(extension.getAttribute("class").includes("inactive"))) {
             extension.style.display = "none";
         } else {
               extension.style.display = "";
-              i++;
         }
     });
         if ((document.getElementsByClassName("inactive").length == 0) && !(document.getElementsByClassName("extensions").length == 0)) {
