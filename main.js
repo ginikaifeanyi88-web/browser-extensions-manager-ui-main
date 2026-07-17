@@ -12,6 +12,9 @@ const removeButtons = document.querySelectorAll(".extension-buttons > div .remov
 const toggleBackgrounds = document.querySelectorAll(".slider");
 const toggleInputs = document.querySelectorAll(".switch input");
 const messageContainer = document.querySelector(".messageContainer");
+const inactiveExtensions = document.getElementsByClassName("inactive");
+let isActiveButtonClicked = false;
+let isinActiveButtonClicked = false;
 
 /*  Main function for changing theme colors*/
 const changeTheme = function () {
@@ -220,6 +223,7 @@ toggleInputs.forEach(toggleInput => {
 
 /* Function for active button page  */
 document.getElementById("activeButton").addEventListener("click", () => {
+    isActiveButtonClicked = true
      messageContainer.innerHTML = "";
     extensions.forEach(extension => {
         if (extension.getAttribute("class").includes("inactive")) {
@@ -253,6 +257,7 @@ document.getElementById("activeButton").addEventListener("click", () => {
 
 /* Function for inactive button page  */
 document.getElementById("inactiveButton").addEventListener("click", () => {
+    isinActiveButtonClicked = true;
      messageContainer.innerHTML = "";
     extensions.forEach(extension => {
         if (!(extension.getAttribute("class").includes("inactive"))) {
@@ -317,7 +322,26 @@ removeButtons.forEach(removeButton => {
         } else {
             document.querySelector(".active_message").style.color = "#fff";
         }
+    } else if ((document.getElementsByClassName("active").length == 0) && isActiveButtonClicked == true) {
+           let html = "<div class='active_message'>You have no active extensions</div>";
+        messageContainer.innerHTML += html;
+        if (colorTheme.getAttribute("class") == "light-state") {
+            document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
+    }  else if ((document.getElementsByClassName("inactive").length ==0) && isinActiveButtonClicked==true){
+  let html = "<div class='active_message'>You have no inactive extensions</div>";
+        messageContainer.innerHTML += html;
+          if (colorTheme.getAttribute("class") == "light-state") {
+           document.querySelector(".active_message").style.color = "";
+        } else {
+            document.querySelector(".active_message").style.color = "#fff";
+        }
     }
     });
 });
+
+
+
 
